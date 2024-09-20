@@ -51,10 +51,12 @@ body {
 }
 
 .svg-container{
+  display: flex;
   background-color: black;
   height: 200px;
   border-radius: 10px;
   margin-bottom: 15px;
+  padding: 10px;
 }
 
 .message-container{
@@ -62,7 +64,31 @@ body {
   height: 200px;
   border-radius: 10px;
   margin-bottom: 15px;
+  padding: 10px;
 
+}
+
+.selectable-svg{
+  cursor: pointer;
+  border-radius: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  height: fit-content;
+}
+
+.selected-svg{
+  border-radius: 10px;
+  border-color: rgb(87, 171, 240);
+  border-width: 2px;
+  margin-left: 5px;
+  margin-right: 5px;
+  height: fit-content;
+}
+
+/* lets add on hover css*/
+.selectable-svg:hover {
+  border-color: rgb(87, 171, 240);
+  border-width: 2px;
 }
 
 
