@@ -9,8 +9,8 @@ export default function Create() {
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    console.log(selectedSVG);
-    console.log(message);
+    // console.log(selectedSVG);
+    // console.log(message);
 }, [selectedSVG, message]);
 
   const handleMessageChange = (e: any) => {
@@ -22,7 +22,7 @@ export default function Create() {
       <div className="create-card-container">
         <div>Choose a Card...</div>
         {/* lets pass in setselected to UsableSVGS */}
-        <UsableSVGs setSelectedSVG={setSelectedSVG} />
+        <UsableSVGs setSelectedSVG={setSelectedSVG} selectedSVG={selectedSVG}/>
         <div>Write a Message...</div>
         <textarea onChange={handleMessageChange} className="message-container">
         </textarea>

@@ -6,13 +6,15 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --svg-border-rgb: 87, 171, 240;
+  --default-theme-rgb: 218, 170, 192;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-start-rgb: 218, 170, 192;
+    --background-end-rgb: 115, 59, 219;
   }
 }
 
@@ -52,7 +54,7 @@ body {
 
 .svg-container{
   display: flex;
-  background-color: black;
+  background-color: rgb(var(--default-theme-rgb));
   height: 200px;
   border-radius: 10px;
   margin-bottom: 15px;
@@ -60,7 +62,7 @@ body {
 }
 
 .message-container{
-  background-color: black;
+  background-color: rgb(var(--default-theme-rgb));
   height: 200px;
   border-radius: 10px;
   margin-bottom: 15px;
@@ -78,7 +80,7 @@ body {
 
 .selected-svg{
   border-radius: 10px;
-  border-color: rgb(87, 171, 240);
+  border-color: rgb(var(--svg-border-rgb));
   border-width: 2px;
   margin-left: 5px;
   margin-right: 5px;
@@ -87,7 +89,7 @@ body {
 
 /* lets add on hover css*/
 .selectable-svg:hover {
-  border-color: rgb(87, 171, 240);
+  border-color: rgb(var(--svg-border-rgb));
   border-width: 2px;
 }
 

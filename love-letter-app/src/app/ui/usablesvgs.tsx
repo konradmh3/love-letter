@@ -1,20 +1,14 @@
 // here we will create an array with all svg names and then map over them to render them in the page
 'use client';
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, MouseEvent } from "react";
 
-export default function UsableSVGs(props: any) {
+export default function UsableSVGs( props: {setSelectedSVG: (svg: string) => void, selectedSVG: string} ) {
     const svgNames = ["envelope.svg", "envelope1.svg"];
 
 
-    const handleSVGClick = (e: any) => {
-        const svgs = document.getElementsByClassName("selected-svg");
-        for (let i = 0; i < svgs.length; i++) {
-            svgs[i].className = "selectable-svg";
-        }
-        props.setSelectedSVG(e.target.alt);
-        e.target.className = "selected-svg";
-        console.log(e.target);
+    const handleSVGClick = (e: MouseEvent<HTMLImageElement>) => {
+        props.setSelectedSVG((e.target as HTMLImageElement).alt);
     }
 
     return (
@@ -23,9 +17,9 @@ export default function UsableSVGs(props: any) {
                     <Image
                         onClick={handleSVGClick}
                         key={name}
-                        className="selectable-svg"
+                        className={props.selectedSVG === name ? "selected-svg" : "selectable-svg"}
                         src={`/${name}`}
-                        alt={`${name}`}
+                        alt={name}
                         width={180}
                         height={37}
                         priority
