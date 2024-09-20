@@ -4,7 +4,7 @@ import Link from "next/link";
 import UsableSVGs from "../ui/usablesvgs";
 import { useState, useEffect } from "react";
 
-export default function create() {
+export default function Create() {
   const [selectedSVG, setSelectedSVG] = useState("");
   const [message, setMessage] = useState("");
 
