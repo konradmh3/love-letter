@@ -3,27 +3,29 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: rgb(0, 0, 0);
+  --background-start-rgb: rgb(214, 219, 220);
+  --background-end-rgb: rgb(255, 255, 255);
+  --svg-border-rgb: rgb(87, 171, 240);
+  --default-theme-rgb: rgb(218, 170, 192);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground-rgb: rgb(255, 255, 255);
+    --background-start-rgb: rgb(218, 170, 192);
+    --background-end-rgb: rgb(115, 59, 219);
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  color: var(--foreground-rgb);
   background: linear-gradient(
       to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
+      var(--background-end-rgb)
     )
-    rgb(var(--background-start-rgb));
+    var(--background-start-rgb);
 }
 
 @layer utilities {
@@ -51,18 +53,44 @@ body {
 }
 
 .svg-container{
-  background-color: black;
+  display: flex;
+  background-color: var(--default-theme-rgb);
   height: 200px;
   border-radius: 10px;
   margin-bottom: 15px;
+  padding: 10px;
 }
 
 .message-container{
-  background-color: black;
+  background-color: var(--default-theme-rgb);
   height: 200px;
   border-radius: 10px;
   margin-bottom: 15px;
+  padding: 10px;
 
+}
+
+.selectable-svg{
+  cursor: pointer;
+  border-radius: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  height: fit-content;
+}
+
+.selected-svg{
+  border-radius: 10px;
+  border-color: var(--svg-border-rgb);
+  border-width: 2px;
+  margin-left: 5px;
+  margin-right: 5px;
+  height: fit-content;
+}
+
+/* lets add on hover css*/
+.selectable-svg:hover {
+  border-color: var(--svg-border-rgb);
+  border-width: 2px;
 }
 
 
