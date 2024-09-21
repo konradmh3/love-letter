@@ -2,7 +2,7 @@
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 
-export default function Letter() {
+export default async function Letter() {
     const searchParams= useSearchParams();
 
     const svg = searchParams.get("svg")?.toString();
