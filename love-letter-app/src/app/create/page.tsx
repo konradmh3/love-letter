@@ -3,6 +3,7 @@
 import Link from "next/link";
 import UsableSVGs from "../ui/usablesvgs";
 import { useState, useEffect } from "react";
+import { postMessage } from "../lib/actions";
 
 export default function Create() {
   const [selectedSVG, setSelectedSVG] = useState("");
@@ -17,6 +18,13 @@ export default function Create() {
     setMessage(e.target.value);
   }
 
+  // here we will define the function that will post the message and the svg to the database using postMessage and return the id of the row then redirect to the letter page with the id in the params
+  const handleCreateLetter = async () => {
+    const id = await postMessage(message);
+    window.location.href = `/create/letter?svg=${selectedSVG}&id=${id}`;
+  }
+
+
   return (
     <div className="create-card-page">
       <div className="create-card-container">
@@ -26,10 +34,11 @@ export default function Create() {
         <div>Write a Message...</div>
         <textarea onChange={handleMessageChange} className="message-container">
         </textarea>
-        <Link href={`/create/letter?svg=${selectedSVG}`} className="">
+        <div onClick={handleCreateLetter} className="cursor-pointer">
             Create!
-        </Link>
+        </div>
       </div>
     </div>
   );
 }
+// href={`/create/letter?svg=${selectedSVG}`}
