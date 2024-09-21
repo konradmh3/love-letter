@@ -8,7 +8,7 @@ export default function UsableSVGs( props: {setSelectedSVG: (svg: string) => voi
 
 
     const handleSVGClick = (e: MouseEvent<HTMLImageElement>) => {
-        props.setSelectedSVG((e.target as HTMLImageElement).alt);
+        props.setSelectedSVG((e.currentTarget).alt);
     }
 
     return (

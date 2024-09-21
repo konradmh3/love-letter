@@ -26,7 +26,7 @@ export default function Create() {
         <div>Write a Message...</div>
         <textarea onChange={handleMessageChange} className="message-container">
         </textarea>
-        <Link href={`/create/letter`} className="">
+        <Link href={`/create/letter?svg=${selectedSVG}`} className="">
             Create!
         </Link>
       </div>

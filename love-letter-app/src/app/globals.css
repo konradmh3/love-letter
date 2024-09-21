@@ -3,29 +3,29 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-  --svg-border-rgb: 87, 171, 240;
-  --default-theme-rgb: 218, 170, 192;
+  --foreground-rgb: rgb(0, 0, 0);
+  --background-start-rgb: rgb(214, 219, 220);
+  --background-end-rgb: rgb(255, 255, 255);
+  --svg-border-rgb: rgb(87, 171, 240);
+  --default-theme-rgb: rgb(218, 170, 192);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 218, 170, 192;
-    --background-end-rgb: 115, 59, 219;
+    --foreground-rgb: rgb(255, 255, 255);
+    --background-start-rgb: rgb(218, 170, 192);
+    --background-end-rgb: rgb(115, 59, 219);
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  color: var(--foreground-rgb);
   background: linear-gradient(
       to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
+      var(--background-end-rgb)
     )
-    rgb(var(--background-start-rgb));
+    var(--background-start-rgb);
 }
 
 @layer utilities {
@@ -54,7 +54,7 @@ body {
 
 .svg-container{
   display: flex;
-  background-color: rgb(var(--default-theme-rgb));
+  background-color: var(--default-theme-rgb);
   height: 200px;
   border-radius: 10px;
   margin-bottom: 15px;
@@ -62,7 +62,7 @@ body {
 }
 
 .message-container{
-  background-color: rgb(var(--default-theme-rgb));
+  background-color: var(--default-theme-rgb);
   height: 200px;
   border-radius: 10px;
   margin-bottom: 15px;
@@ -80,7 +80,7 @@ body {
 
 .selected-svg{
   border-radius: 10px;
-  border-color: rgb(var(--svg-border-rgb));
+  border-color: var(--svg-border-rgb);
   border-width: 2px;
   margin-left: 5px;
   margin-right: 5px;
@@ -89,7 +89,7 @@ body {
 
 /* lets add on hover css*/
 .selectable-svg:hover {
-  border-color: rgb(var(--svg-border-rgb));
+  border-color: var(--svg-border-rgb);
   border-width: 2px;
 }
 
