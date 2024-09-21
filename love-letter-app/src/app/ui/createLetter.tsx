@@ -1,6 +1,5 @@
-"use client";
 import { useSearchParams } from "next/navigation";
-import { getMessage } from "../lib/data";
+// import { getMessage } from "../lib/data";
 
 export default function CreateLetter() {
     const searchParams= useSearchParams();
