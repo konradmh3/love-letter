@@ -1,13 +1,23 @@
-'use client';
+// 'use client';
 
-import CreateLetter from "@/app/ui/createLetter";
-import { Suspense } from "react";
+import { getMessage } from "@/app/lib/data";
+// import { Suspense } from "react";
 
-export default function Letter() {
+export default async function Letter({
+  searchParams,
+}: {
+  searchParams?: {
+    id?: number;
+    svg?: string;
+  };
+}) {
+    const message = await getMessage(searchParams?.id);
+    console.log("message: ", message);
     return (
-      <Suspense fallback={null}>
-        <CreateLetter/>
-      </Suspense>
+      <>
+      {searchParams?.id}{" "}
+      {message.message}
+      </>
     );
   }
   
