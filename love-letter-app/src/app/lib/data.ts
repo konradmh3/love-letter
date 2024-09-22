@@ -9,9 +9,6 @@ import { MessagesTable } from "./definitions";
 export async function getMessage(id: number | undefined) {
     noStore();
     try {
-        if (id===undefined) {
-            return { message: "No message found" };
-        }
         const result = await sql<MessagesTable>`SELECT * FROM messages WHERE id = ${id}`;
         return result.rows[0];
     }
