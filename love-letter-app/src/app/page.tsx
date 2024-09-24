@@ -7,7 +7,7 @@ export default function Home() {
         <Link href="/create">
           <Image
             className="dark:drop-shadow-[0_0_0.3rem_#ffffff70] hover:invert" 
-            src="/image 1.svg"
+            src="/image 1.png"
             alt="Envelope Logo"
             width={116}
             height={77}
