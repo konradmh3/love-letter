@@ -29,6 +29,7 @@ body {
   font-size: 48px;
   font-weight: 400;
   line-height: 60px;
+  margin-bottom: 20px;
 }
 
 @layer utilities {
@@ -102,9 +103,15 @@ body {
 
 .create-button {
   padding: 15px 30px 15px 30px;
-  margin-top: 20px;
   gap: 14px;
   border-radius: 10px;
   border: 2px solid rgb(0, 0, 0);
 
+}
+
+.create-button:hover {
+  padding: 16px 31px 16px 31px;
+  background-color: #D081BE;
+  color: white;
+  border: 1px solid white;
 }
