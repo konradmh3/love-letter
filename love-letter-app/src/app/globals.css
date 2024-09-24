@@ -4,8 +4,8 @@
 
 :root {
   --foreground-rgb: rgb(0, 0, 0);
-  --background-start-rgb: rgb(214, 219, 220);
-  --background-end-rgb: rgb(255, 255, 255);
+  --background-start-rgb: rgb(173, 230, 234);
+  --background-end-rgb: rgb(173, 230, 234);
   --svg-border-rgb: rgb(87, 171, 240);
   --default-theme-rgb: rgb(218, 170, 192);
 }
@@ -13,19 +13,25 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: rgb(255, 255, 255);
-    --background-start-rgb: rgb(218, 170, 192);
-    --background-end-rgb: rgb(115, 59, 219);
+    --background-start-rgb: rgb(173, 230, 234);
+    --background-end-rgb: rgb(173, 230, 234);
   }
 }
 
 body {
-  color: var(--foreground-rgb);
+  font-family: questa-slab, serif;
+  font-style: normal;
   background: linear-gradient(
       to bottom,
       transparent,
       var(--background-end-rgb)
     )
     var(--background-start-rgb);
+}
+
+.title-text{
+  font-size: 30px;
+  font-weight: 400;
 }
 
 @layer utilities {
@@ -96,6 +102,14 @@ body {
 .selectable-svg:hover {
   border-color: var(--svg-border-rgb);
   border-width: 2px;
+}
+
+.create-button{
+padding: 15px 25px 15px 25px;
+gap: 14px;
+border-radius: 10px;
+border: 2px solid rgb(0, 0, 0);
+/* font shrinks with size */
 }
 
 
