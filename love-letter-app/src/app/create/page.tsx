@@ -4,6 +4,7 @@ import Link from "next/link";
 import UsableSVGs from "../ui/usablesvgs";
 import { useState, useEffect } from "react";
 import { postMessage } from "../lib/actions";
+import CreationComponent from "../ui/creationcomponent";
 
 export default function Create() {
   const [selectedSVG, setSelectedSVG] = useState("");
@@ -31,17 +32,17 @@ export default function Create() {
 
   return (
     <div className="create-card-page">
-      <div className="create-card-container">
-        <div>Choose a Card...</div>
-        {/* lets pass in setselected to UsableSVGS */}
-        <UsableSVGs setSelectedSVG={setSelectedSVG} selectedSVG={selectedSVG}/>
-        <div>Write a Message...</div>
-        <textarea onChange={handleMessageChange} className="message-container">
-        </textarea>
-        <div onClick={handleCreateLetter} className="cursor-pointer">
-            Create!
+      <CreationComponent header={<h1>Choose envelope</h1>} >
+      <UsableSVGs setSelectedSVG={setSelectedSVG} selectedSVG={selectedSVG}/>
+      </CreationComponent>
+      <CreationComponent header={<h1>Choose message</h1>}>
+      <textarea onChange={handleMessageChange} className="message-container" placeholder="type message...">
+      </textarea>
+      <div onClick={handleCreateLetter} className="create-button">
+            Create
         </div>
-      </div>
+      </CreationComponent>
+      
     </div>
   );
 }

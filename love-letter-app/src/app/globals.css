@@ -56,27 +56,6 @@ body {
   max-width: 600px;
 }
 
-.svg-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
-  overflow-y: scroll;
-  background-color: var(--default-theme-rgb);
-  height: 200px;
-  border-radius: 10px;
-  margin-bottom: 15px;
-  padding: 10px;
-}
-
-.message-container {
-  background-color: var(--default-theme-rgb);
-  height: 200px;
-  border-radius: 10px;
-  margin-bottom: 15px;
-  padding: 10px;
-}
-
 .selectable-svg {
   cursor: pointer;
   border-radius: 10px;
@@ -84,6 +63,8 @@ body {
   margin-right: 5px;
   height: fit-content;
   max-width: 30%;
+  border-width: 2px;
+  border-color: transparent;
 }
 
 .selected-svg {
@@ -92,6 +73,7 @@ body {
   border-width: 2px;
   margin-left: 5px;
   margin-right: 5px;
+  max-width: 30%;
   height: fit-content;
 }
 
@@ -101,17 +83,16 @@ body {
   border-width: 2px;
 }
 
-.create-button {
+.start-button {
   padding: 15px 30px 15px 30px;
   gap: 14px;
   border-radius: 10px;
   border: 2px solid rgb(0, 0, 0);
-
 }
 
-.create-button:hover {
+.start-button:hover {
   padding: 16px 31px 16px 31px;
-  background-color: #D081BE;
+  background-color: #d081be;
   color: white;
   border: 1px solid white;
 }
@@ -126,9 +107,97 @@ body {
 
 #myCard {
   transition: transform 0.3s ease;
-  
 }
 
 .flipped {
   transform: rotateY(180deg);
+}
+
+.creation-component {
+  display: flex;
+  flex-direction: column;
+  background-color: #fafafa;
+  width: 80%;
+  max-width: 800px;
+  margin: 20px;
+  height: 40%;
+  max-height: 323;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.creation-component-header {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  padding-right: 10px;
+  height: 40px;
+  border-bottom: 1px solid black;
+  font-family: work-sans, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.creation-component-body {
+  /* position: relative; */
+  overflow: hidden;
+  height: 100%;
+  position: relative;
+}
+
+.svg-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  overflow-y: auto;
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.message-container {
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  font-family: work-sans, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: 10px;
+  background-color: #fafafa;
+  /* remove resizing */
+  resize: none;
+}
+
+.message-container:focus {
+  outline: none;
+}
+
+.create-button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 15px;
+  /* then lets move the button to be inside the parent */
+  border-radius: 10px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 102px;
+  height: 49px;
+  cursor: pointer;
+  font-family: work-sans, sans-serif;
+font-size: 16px;
+font-weight: 400;
+
+
+}
+
+.create-button:hover {
+  padding: 16px 26px 16px 26px;
+  background-color: #d081be;
+  color: white;
+  border: 1px solid white;
 }
