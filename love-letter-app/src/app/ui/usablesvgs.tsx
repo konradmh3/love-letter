@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useState, useEffect, MouseEvent } from "react";
 
 export default function UsableSVGs( props: {setSelectedSVG: (svg: string) => void, selectedSVG: string} ) {
-    const svgNames = ["envelope.svg", "envelope1.svg"];
+    const svgNames = ["envelope.svg", "image 1.svg", "image 2.svg", "image 3.svg", "image 4.svg", "image 5.svg", "image 7.svg"];
 
 
     const handleSVGClick = (e: MouseEvent<HTMLImageElement>) => {
