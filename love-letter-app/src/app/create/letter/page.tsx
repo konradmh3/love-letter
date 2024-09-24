@@ -14,12 +14,8 @@ export default async function Letter({
 }) {
 
     const message = await getMessage(searchParams?.id);
-
-
-
     return (
       <div className="letter-container">
-      {searchParams?.id}{" "}
       {message.message}
       <AnimatedCard svg={searchParams?.svg}/>
       </div>

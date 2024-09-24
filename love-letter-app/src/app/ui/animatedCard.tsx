@@ -13,7 +13,7 @@ export default function AnimatedCard(props: { svg: string | undefined }) {
         id="myCard"
         src={`/${props.svg}`}
         alt="Envelope Logo"
-        width={116}
+        width={200}
         height={77}
       />
     );
