@@ -1,6 +1,7 @@
 // 'use client';
 
 import { getMessage } from "@/app/lib/data";
+import AnimatedCard from "@/app/ui/animatedCard";
 // import { Suspense } from "react";
 
 export default async function Letter({
@@ -11,13 +12,17 @@ export default async function Letter({
     svg?: string;
   };
 }) {
+
     const message = await getMessage(searchParams?.id);
-    console.log("message: ", message);
+
+
+
     return (
-      <>
+      <div className="letter-container">
       {searchParams?.id}{" "}
       {message.message}
-      </>
+      <AnimatedCard svg={searchParams?.svg}/>
+      </div>
     );
   }
   

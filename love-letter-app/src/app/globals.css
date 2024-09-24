@@ -115,3 +115,11 @@ body {
   color: white;
   border: 1px solid white;
 }
+
+#myCard {
+  transition: transform 0.3s ease;
+}
+
+.flipped {
+  transform: rotateY(180deg);
+}

@@ -20,6 +20,10 @@ export default function Create() {
 
   // here we will define the function that will post the message and the svg to the database using postMessage and return the id of the row then redirect to the letter page with the id in the params
   const handleCreateLetter = async () => {
+    if (!selectedSVG || !message) {
+      alert("Please select both a card and write a message");
+      return;
+    }
     const id = await postMessage(message);
     window.location.href = `/create/letter?svg=${selectedSVG}&id=${id}`;
   }
