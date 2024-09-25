@@ -8,6 +8,7 @@
   --background-end-rgb: rgb(173, 230, 234);
   --svg-border-rgb: rgb(87, 171, 240);
   --default-theme-rgb: rgb(218, 170, 192);
+  --button-hover-rgb: rgb(208, 129, 190);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -87,12 +88,12 @@ body {
   padding: 15px 30px 15px 30px;
   gap: 14px;
   border-radius: 10px;
-  border: 2px solid rgb(0, 0, 0);
+  border: 2px solid var(--foreground-rgb);
 }
 
 .start-button:hover {
   padding: 16px 31px 16px 31px;
-  background-color: #d081be;
+  background-color: var(--button-hover-rgb);
   color: white;
   border: 1px solid white;
 }
@@ -123,7 +124,7 @@ body {
   height: 40%;
   max-height: 323;
   border-radius: 10px;
-  border: 1px solid black;
+  border: 1px solid var(--foreground-rgb);
 }
 
 .creation-component-header {
@@ -132,14 +133,13 @@ body {
   align-items: center;
   padding-right: 10px;
   height: 40px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--foreground-rgb);
   font-family: work-sans, sans-serif;
   font-size: 18px;
   font-weight: 500;
 }
 
 .creation-component-body {
-  /* position: relative; */
   overflow: hidden;
   height: 100%;
   position: relative;
@@ -166,7 +166,6 @@ body {
   font-weight: 400;
   border-radius: 10px;
   background-color: #fafafa;
-  /* remove resizing */
   resize: none;
 }
 
@@ -179,7 +178,6 @@ body {
   bottom: 0;
   right: 0;
   margin: 15px;
-  /* then lets move the button to be inside the parent */
   border-radius: 10px;
   border: 1px solid black;
   display: flex;
@@ -189,15 +187,13 @@ body {
   height: 49px;
   cursor: pointer;
   font-family: work-sans, sans-serif;
-font-size: 16px;
-font-weight: 400;
-
-
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .create-button:hover {
   padding: 16px 26px 16px 26px;
-  background-color: #d081be;
+  background-color: var(--button-hover-rgb);
   color: white;
   border: 1px solid white;
 }

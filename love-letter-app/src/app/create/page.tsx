@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import Link from "next/link";
 import UsableSVGs from "../ui/usablesvgs";
@@ -13,11 +13,11 @@ export default function Create() {
   useEffect(() => {
     // console.log(selectedSVG);
     // console.log(message);
-}, [selectedSVG, message]);
+  }, [selectedSVG, message]);
 
   const handleMessageChange = (e: any) => {
     setMessage(e.target.value);
-  }
+  };
 
   // here we will define the function that will post the message and the svg to the database using postMessage and return the id of the row then redirect to the letter page with the id in the params
   const handleCreateLetter = async () => {
@@ -27,22 +27,23 @@ export default function Create() {
     }
     const id = await postMessage(message);
     window.location.href = `/create/letter?svg=${selectedSVG}&id=${id}`;
-  }
-
+  };
 
   return (
     <div className="create-card-page">
-      <CreationComponent header={<h1>Choose envelope</h1>} >
-      <UsableSVGs setSelectedSVG={setSelectedSVG} selectedSVG={selectedSVG}/>
+      <CreationComponent header={<h1>Choose envelope</h1>}>
+        <UsableSVGs setSelectedSVG={setSelectedSVG} selectedSVG={selectedSVG} />
       </CreationComponent>
       <CreationComponent header={<h1>Choose message</h1>}>
-      <textarea onChange={handleMessageChange} className="message-container" placeholder="type message...">
-      </textarea>
-      <div onClick={handleCreateLetter} className="create-button">
-            Create
+        <textarea
+          onChange={handleMessageChange}
+          className="message-container"
+          placeholder="type message..."
+        ></textarea>
+        <div onClick={handleCreateLetter} className="create-button">
+          Create
         </div>
       </CreationComponent>
-      
     </div>
   );
 }
