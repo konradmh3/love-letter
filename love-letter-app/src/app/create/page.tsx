@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import UsableSVGs from "../ui/usablesvgs";
 import { useState, useEffect } from "react";
 import { postMessage } from "../lib/actions";
@@ -34,7 +33,7 @@ export default function Create() {
       <CreationComponent header={<h1>Choose envelope</h1>}>
         <UsableSVGs setSelectedSVG={setSelectedSVG} selectedSVG={selectedSVG} />
       </CreationComponent>
-      <CreationComponent header={<h1>Choose message</h1>}>
+      <CreationComponent header={<h1>Create message</h1>}>
         <textarea
           onChange={handleMessageChange}
           className="message-container"

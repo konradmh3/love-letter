@@ -20,8 +20,6 @@
 } */
 
 body {
-  font-family: questa-slab, serif;
-  font-style: normal;
   background: linear-gradient(to bottom, transparent, var(--background-end-rgb))
     var(--background-start-rgb);
 }
@@ -134,7 +132,6 @@ body {
   padding-right: 10px;
   height: 40px;
   border-bottom: 1px solid var(--foreground-rgb);
-  font-family: work-sans, sans-serif;
   font-size: 18px;
   font-weight: 500;
 }
@@ -161,7 +158,6 @@ body {
   height: 100%;
   width: 100%;
   padding: 10px;
-  font-family: work-sans, sans-serif;
   font-size: 16px;
   font-weight: 400;
   border-radius: 10px;
@@ -186,7 +182,6 @@ body {
   width: 102px;
   height: 49px;
   cursor: pointer;
-  font-family: work-sans, sans-serif;
   font-size: 16px;
   font-weight: 400;
 }
