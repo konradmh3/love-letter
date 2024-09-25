@@ -11,13 +11,13 @@
   --button-hover-rgb: rgb(208, 129, 190);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: rgb(255, 255, 255);
+    --foreground-rgb: rgb(0, 0, 0);
     --background-start-rgb: rgb(173, 230, 234);
     --background-end-rgb: rgb(173, 230, 234);
   }
-}
+} */
 
 body {
   font-family: questa-slab, serif;
