@@ -4,6 +4,7 @@ import UsableSVGs from "../ui/usablesvgs";
 import { useState, useEffect } from "react";
 import { postMessage } from "../lib/actions";
 import CreationComponent from "../ui/creationcomponent";
+import { workSans } from "../ui/fonts";
 
 export default function Create() {
   const [selectedSVG, setSelectedSVG] = useState("");
@@ -29,6 +30,7 @@ export default function Create() {
   };
 
   return (
+    <div className={workSans.className}>
     <div className="create-card-page">
       <CreationComponent header={<h1>Choose envelope</h1>}>
         <UsableSVGs setSelectedSVG={setSelectedSVG} selectedSVG={selectedSVG} />
@@ -43,7 +45,7 @@ export default function Create() {
           Create
         </div>
       </CreationComponent>
-    </div>
+    </div></div>
   );
 }
 // href={`/create/letter?svg=${selectedSVG}`}
