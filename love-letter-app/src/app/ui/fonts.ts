@@ -1,4 +1,4 @@
-import {Work_Sans, Roboto_Slab} from '@next/font/google';
+import {Work_Sans, Roboto_Slab} from 'next/font/google';
 
 export const workSans = Work_Sans({
     subsets: ['latin'],
