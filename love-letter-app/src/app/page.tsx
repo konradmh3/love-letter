@@ -16,7 +16,7 @@ export default function Home() {
           
         </Link>
       <div className="title-text">LoveLetter</div>
-      <Link className="create-button" href="/create">
+      <Link className="start-button" href="/create">
         Create new message
       </Link>
     </main>
