@@ -10,14 +10,14 @@
   --default-theme-rgb: rgb(218, 170, 192);
   --button-hover-rgb: rgb(208, 129, 190);
 }
-
+/* 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: rgb(255, 255, 255);
     --background-start-rgb: rgb(173, 230, 234);
     --background-end-rgb: rgb(173, 230, 234);
   }
-}
+} */
 
 body {
   font-family: questa-slab, serif;
