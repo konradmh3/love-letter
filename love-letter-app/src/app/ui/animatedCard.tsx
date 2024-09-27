@@ -6,7 +6,7 @@ import "@/app/flip.css";
 
 export default function AnimatedCard(props: {
   svg?: string;
-  msg?: string;
+  msg: string;
 }) {
   const [flipped, setFlipped] = useState(false);
 

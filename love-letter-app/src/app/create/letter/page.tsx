@@ -5,8 +5,8 @@ export default async function Letter({
   searchParams,
 }: {
   searchParams?: {
-    id?: number;
-    svg?: string;
+    id: number;
+    svg: string;
   };
 }) {
   const message = await getMessage(searchParams?.id);

@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 
 const BackSVG = (props: {
-  svg?: string;
+  svg: string;
   msg?: string;
 }) => {
   return (
