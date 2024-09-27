@@ -11,8 +11,6 @@ export default function Create() {
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    // console.log(selectedSVG);
-    // console.log(message);
   }, [selectedSVG, message]);
 
   const handleMessageChange = (e: any) => {
@@ -31,21 +29,24 @@ export default function Create() {
 
   return (
     <div className={workSans.className}>
-    <div className="create-card-page">
-      <CreationComponent header={<h1>Choose envelope</h1>}>
-        <UsableSVGs setSelectedSVG={setSelectedSVG} selectedSVG={selectedSVG} />
-      </CreationComponent>
-      <CreationComponent header={<h1>Create message</h1>}>
-        <textarea
-          onChange={handleMessageChange}
-          className="message-container"
-          placeholder="type message..."
-        ></textarea>
-        <div onClick={handleCreateLetter} className="create-button">
-          Create
-        </div>
-      </CreationComponent>
-    </div></div>
+      <div className="create-card-page">
+        <CreationComponent header={<h1>Choose envelope</h1>}>
+          <UsableSVGs
+            setSelectedSVG={setSelectedSVG}
+            selectedSVG={selectedSVG}
+          />
+        </CreationComponent>
+        <CreationComponent header={<h1>Create message</h1>}>
+          <textarea
+            onChange={handleMessageChange}
+            className="message-container"
+            placeholder="type message..."
+          ></textarea>
+          <div onClick={handleCreateLetter} className="create-button">
+            Create
+          </div>
+        </CreationComponent>
+      </div>
+    </div>
   );
 }
-// href={`/create/letter?svg=${selectedSVG}`}

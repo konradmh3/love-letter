@@ -104,12 +104,17 @@ body {
   height: 100vh;
 }
 
-#myCard {
-  transition: transform 0.3s ease;
+.animated-card {
+  height: 300px;
+  width: 300px;
 }
 
-.flipped {
-  transform: rotateY(180deg);
+.card-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: pre-wrap;
 }
 
 .creation-component {
