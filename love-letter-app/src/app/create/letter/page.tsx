@@ -12,13 +12,14 @@ export default async function Letter({
     svg?: string;
   };
 }) {
-
-    const message = await getMessage(searchParams?.id);
-    return (
-      <div className="letter-container">
-      {message.message}
-      <AnimatedCard svg={searchParams?.svg}/>
+  const message = await getMessage(searchParams?.id);
+  return (
+    <div className="letter-container">
+      {/* <div  className="message">
+      {message.message}</div> */}
+      <div className="animated-card">
+        <AnimatedCard svg={searchParams?.svg} msg={message.message} />
       </div>
-    );
-  }
-  
+    </div>
+  );
+}
