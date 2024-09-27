@@ -5,8 +5,8 @@ import BackSVG from "./backsvg";
 import "@/app/flip.css";
 
 export default function AnimatedCard(props: {
-  svg: string | undefined;
-  msg: string | undefined;
+  svg?: string;
+  msg?: string;
 }) {
   const [flipped, setFlipped] = useState(false);
 

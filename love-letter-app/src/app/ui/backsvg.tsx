@@ -2,8 +2,8 @@ import React from "react";
 import Image from "next/image";
 
 const BackSVG = (props: {
-  svg: string | undefined;
-  msg: string | undefined;
+  svg?: string;
+  msg?: string;
 }) => {
   return (
     <div className="h-fit w-fit relative">

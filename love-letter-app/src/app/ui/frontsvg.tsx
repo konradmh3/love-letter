@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-const FrontSVG = (props: { svg: string | undefined }) => {
+const FrontSVG = (props: { svg?: string }) => {
   return (
     <Image
       src={`${props.svg}`}
