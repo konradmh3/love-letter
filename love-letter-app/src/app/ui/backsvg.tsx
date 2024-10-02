@@ -6,7 +6,7 @@ const BackSVG = (props: {
   msg?: string;
 }) => {
   return (
-    <div className="h-fit w-fit relative">
+    <div className="relative">
       <Image
         src={`${props.svg}`}
         alt="Envelope Logo"
