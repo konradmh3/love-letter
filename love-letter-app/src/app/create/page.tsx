@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { postMessage } from "../lib/actions";
 import CreationComponent from "../ui/creationcomponent";
 import { workSans } from "../ui/fonts";
+import BackgroundSelect from "../ui/backgroundselect";
 
 export default function Create() {
   const [selectedSVG, setSelectedSVG] = useState("");
@@ -46,6 +47,8 @@ export default function Create() {
             Create
           </div>
         </CreationComponent>
+
+        <BackgroundSelect />
       </div>
     </div>
   );

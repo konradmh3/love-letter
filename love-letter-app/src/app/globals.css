@@ -40,7 +40,6 @@ body {
 .create-card-page {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   height: 100vh;
 }
@@ -203,3 +202,52 @@ body {
   color: white;
   border: 1px solid white;
 }
+
+/* .back-ground-select:hover{
+  height: 15%;
+  width : 80%;
+  max-width: 800px;
+  flex-direction: row;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+} */
+
+.back-ground-select{
+  height: 40px;
+  width : 80%;
+  max-width: 800px;
+  flex-direction: row;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  border: 1px solid var(--foreground-rgb);
+  
+}
+.back-ground-select:hover > .background-select-circle1{
+  transform: translate(-200%, -50%);
+}
+.back-ground-select:hover > .background-select-circle2{
+  transform: translate(100%, -50%);
+}
+.back-ground-select:hover > .background-select-circle3{
+  transform: translate(-50%, -50%);
+}
+.back-ground-select:hover > .background-select-circle4{
+  transform: translate(-350%, -50%);
+}
+.back-ground-select:hover > .background-select-circle5{
+  transform: translate(250%, -50%);
+}
+
+
+.back-ground-select > *{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);  
+  transition: transform .5s;
+}
+
+
