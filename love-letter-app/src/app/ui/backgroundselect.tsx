@@ -1,92 +1,45 @@
-export default function BackgroundSelect() {
+export default function BackgroundSelect(props: {setBgColor: (svg: string) => void, bgColor: string}) {
+  // lets map the svg circles to the background colors
+  // we can use the same colors as the background colors    
+  const handleBackgroundSelect = (color: string) => {
+      props.setBgColor(color);      
+    }
+
+  const backgroundColors = [
+    "rgb(234, 202, 227)",
+    "rgb(215, 32, 49)",
+    "rgb(211, 237, 242)",
+    "rgb(245, 200, 66)",
+    "rgb(173, 230, 233)"
+  ];
+
+  const circles = backgroundColors.map((color, index) => {
+    return (
+      <svg
+        onClick={() => handleBackgroundSelect(color)}
+        key={index}
+        className={`background-select-circle${index + 1}`}
+        width="40"
+        height="40"
+        viewBox="0 0 42 42"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="21"
+          cy="21"
+          r="20"
+          fill={color}
+          stroke="black"
+          strokeWidth="2"
+        />
+      </svg>
+    );
+
+  });
   return (
     <div className="back-ground-select">
-      {/* insert svg circle */}
-      <svg
-        className="background-select-circle1"
-        width="40"
-        height="40"
-        viewBox="0 0 42 42"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <circle
-          cx="21"
-          cy="21"
-          r="20"
-          fill="#EACAE3"
-          stroke="black"
-          strokeWidth="2"
-        />
-      </svg>
-      <svg
-        className="background-select-circle2"
-        width="40"
-        height="40"
-        viewBox="0 0 42 42"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <circle
-          cx="21"
-          cy="21"
-          r="20"
-          fill="#D72031"
-          stroke="black"
-          strokeWidth="2"
-        />
-      </svg>
-      <svg
-        className="background-select-circle3"
-        width="40"
-        height="40"
-        viewBox="0 0 42 42"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <circle
-          cx="21"
-          cy="21"
-          r="20"
-          fill="#D3EDF2"
-          stroke="black"
-          strokeWidth="2"
-        />
-      </svg>
-      <svg
-        className="background-select-circle4"
-        width="40"
-        height="40"
-        viewBox="0 0 42 42"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <circle
-          cx="21"
-          cy="21"
-          r="20"
-          fill="#F5C842"
-          stroke="black"
-          strokeWidth="2"
-        />
-      </svg>
-      <svg
-        className="background-select-circle5"
-        width="40"
-        height="40"
-        viewBox="0 0 42 42"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <circle
-          cx="21"
-          cy="21"
-          r="20"
-          fill="#ADE6E9"
-          stroke="black"
-          strokeWidth="2"
-        />
-      </svg>
+      {circles}
     </div>
   );
 }

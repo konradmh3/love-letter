@@ -41,6 +41,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-evenly;
   height: 100vh;
 }
 
@@ -75,7 +76,6 @@ body {
   height: fit-content;
 }
 
-/* lets add on hover css*/
 .selectable-svg:hover {
   border-color: var(--svg-border-rgb);
   border-width: 2px;
@@ -101,6 +101,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-color: var(--background-letter-rgb);
 }
 
 .animated-card {
@@ -203,51 +204,38 @@ body {
   border: 1px solid white;
 }
 
-/* .back-ground-select:hover{
-  height: 15%;
-  width : 80%;
-  max-width: 800px;
-  flex-direction: row;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-} */
-
-.back-ground-select{
+.back-ground-select {
   height: 40px;
-  width : 80%;
+  width: 80%;
   max-width: 800px;
   flex-direction: row;
   display: flex;
   justify-content: space-around;
   align-items: center;
   position: relative;
-  border: 1px solid var(--foreground-rgb);
-  
-}
-.back-ground-select:hover > .background-select-circle1{
-  transform: translate(-200%, -50%);
-}
-.back-ground-select:hover > .background-select-circle2{
-  transform: translate(100%, -50%);
-}
-.back-ground-select:hover > .background-select-circle3{
-  transform: translate(-50%, -50%);
-}
-.back-ground-select:hover > .background-select-circle4{
-  transform: translate(-350%, -50%);
-}
-.back-ground-select:hover > .background-select-circle5{
-  transform: translate(250%, -50%);
 }
 
-
-.back-ground-select > *{
+.back-ground-select > * {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);  
-  transition: transform .5s;
+  transform: translate(-50%, -50%);
+  transition: transform 0.5s;
+  cursor: pointer;
 }
 
-
+.back-ground-select:hover > .background-select-circle1 {
+  transform: translate(-350%, -50%);
+}
+.back-ground-select:hover > .background-select-circle2 {
+  transform: translate(-200%, -50%);
+}
+.back-ground-select:hover > .background-select-circle3 {
+  transform: translate(-50%, -50%);
+}
+.back-ground-select:hover > .background-select-circle4 {
+  transform: translate(100%, -50%);
+}
+.back-ground-select:hover > .background-select-circle5 {
+  transform: translate(250%, -50%);
+}

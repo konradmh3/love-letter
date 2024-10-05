@@ -10,22 +10,25 @@ import BackgroundSelect from "../ui/backgroundselect";
 export default function Create() {
   const [selectedSVG, setSelectedSVG] = useState("");
   const [message, setMessage] = useState("");
+  const [bgColor, setBgColor] = useState("rgb(173, 230, 233)");
 
   useEffect(() => {
-  }, [selectedSVG, message]);
+    const root = document.documentElement;
+    root.style.setProperty("--background-start-rgb", bgColor);
+    root.style.setProperty("--background-end-rgb", bgColor);
+  }, [bgColor]);
 
   const handleMessageChange = (e: any) => {
     setMessage(e.target.value);
   };
 
-  // here we will define the function that will post the message and the svg to the database using postMessage and return the id of the row then redirect to the letter page with the id in the params
   const handleCreateLetter = async () => {
     if (!selectedSVG || !message) {
       alert("Please select both a card and write a message");
       return;
     }
     const id = await postMessage(message);
-    window.location.href = `/create/letter?svg=${selectedSVG}&id=${id}`;
+    window.location.href = `/create/letter?svg=${selectedSVG}&id=${id}&bgcolor=${bgColor}`;
   };
 
   return (
@@ -48,7 +51,7 @@ export default function Create() {
           </div>
         </CreationComponent>
 
-        <BackgroundSelect />
+        <BackgroundSelect setBgColor={setBgColor} bgColor={bgColor} />
       </div>
     </div>
   );
