@@ -1,5 +1,6 @@
 import { getMessage } from "@/app/lib/data";
 import AnimatedCard from "@/app/ui/animatedCard";
+import Link from "next/link";
 
 export default async function Letter({
   searchParams,
@@ -18,6 +19,9 @@ export default async function Letter({
       <div className="animated-card">
         <AnimatedCard svg={searchParams?.svg} msg={message.message} />
       </div>
+      <Link className="start-button bot-right" href="/create">
+        Create new...
+      </Link>
     </div>
   );
 }

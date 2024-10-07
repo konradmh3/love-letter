@@ -94,6 +94,12 @@ body {
   color: white;
   border: 1px solid white;
 }
+.bot-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 15px;
+}
 
 .letter-container {
   display: flex;
@@ -245,3 +251,7 @@ body {
   transition: display 0.5s;
 }
 
+.background-select-rgb{
+  /* lets do a shadow for only the image and not the div */
+  filter: drop-shadow(0 0 5px black);
+}
