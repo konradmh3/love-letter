@@ -239,3 +239,9 @@ body {
 .back-ground-select:hover > .background-select-circle5 {
   transform: translate(250%, -50%);
 }
+
+.back-ground-select:hover > .background-select-rgb{
+  display: none;
+  transition: display 0.5s;
+}
+

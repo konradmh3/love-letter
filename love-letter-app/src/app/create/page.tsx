@@ -39,7 +39,8 @@ export default function Create() {
             setSelectedSVG={setSelectedSVG}
             selectedSVG={selectedSVG}
           />
-        </CreationComponent>
+        </CreationComponent>        
+        <BackgroundSelect setBgColor={setBgColor} bgColor={bgColor} />
         <CreationComponent header={<h1>Create message</h1>}>
           <textarea
             onChange={handleMessageChange}
@@ -51,7 +52,6 @@ export default function Create() {
           </div>
         </CreationComponent>
 
-        <BackgroundSelect setBgColor={setBgColor} bgColor={bgColor} />
       </div>
     </div>
   );

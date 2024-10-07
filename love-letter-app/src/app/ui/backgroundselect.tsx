@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function BackgroundSelect(props: {setBgColor: (svg: string) => void, bgColor: string}) {
   // lets map the svg circles to the background colors
   // we can use the same colors as the background colors    
@@ -40,6 +42,14 @@ export default function BackgroundSelect(props: {setBgColor: (svg: string) => vo
   return (
     <div className="back-ground-select">
       {circles}
+      <Image
+            className="background-select-rgb" 
+            src="/rgbwheel.png"
+            alt="Envelope Logo"
+            width={46}
+            height={46}
+            priority
+          />
     </div>
   );
 }
