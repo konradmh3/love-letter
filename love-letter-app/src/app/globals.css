@@ -27,12 +27,11 @@ body {
 
 .mainContainer{
   position: absolute;
-  top: 50vh;
-  left: 50vw;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   display: grid;
   place-items: center;
-  text-align: center;
 }
 
 .title-text {
