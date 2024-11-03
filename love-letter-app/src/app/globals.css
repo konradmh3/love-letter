@@ -24,6 +24,14 @@ body {
     var(--background-start-rgb);
 }
 
+.mainContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
 .title-text {
   font-size: 48px;
   font-weight: 400;
