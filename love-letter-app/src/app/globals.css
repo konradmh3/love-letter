@@ -218,6 +218,13 @@ body {
   border: 1px solid white;
 }
 
+.spinner{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 15px;
+}
+
 .dropdownContainer{
   width: 80%;
   max-width: 800px;

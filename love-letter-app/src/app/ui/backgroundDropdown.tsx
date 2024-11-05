@@ -6,15 +6,13 @@ export default function BackgroundDropdown(props: {
   setBgColor: (svg: string) => void;
   bgColor: string;
 }) {
-
-    const [isOpen, setIsOpen] = useState(false);
-    const [selectedOption, setSelectedOption] = useState("rgb(173, 230, 233)");
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedOption, setSelectedOption] = useState("rgb(173, 230, 233)");
 
   const handleBackgroundSelect = (color: string) => {
     props.setBgColor(color);
     setIsOpen(false);
     setSelectedOption(color);
-
   };
 
   const backgroundColors = [
@@ -32,36 +30,29 @@ export default function BackgroundDropdown(props: {
     setIsOpen(!isOpen);
   };
 
-
-  const circles = backgroundColors.map((color, index) => {
-    return (
-      <Dropdown.Item
-        className="dropdownItem"
-        key={index}
-        onClick={() => handleBackgroundSelect(color)}
-        style={{ backgroundColor: color }}
-      ></Dropdown.Item>
-    );
-  });
-
   return (
     <div className="dropdownContainer">
-    <div className="dropdown">
-
-        
-        <button onClick={toggleDropdown} className={isOpen ? "dropdownToggle open" : "dropdownToggle"}>
-        
-        <Image src="/colorPicker.svg" style={{filter: `drop-shadow(0px 0px 2px ${selectedOption})`}} width={18.7} height={21} alt="color picker" className="colorPicker" />
-
-        {"Background color"}
-
-        <Image src={isOpen ? "/upArrow.svg" : "/downArrow.svg"} width={13.98} height={7.99} alt="color picker" className="colorPicker" />
-
-        </button>
-
-
-
-
+      <button
+        onClick={toggleDropdown}
+        className={isOpen ? "dropdownToggle open" : "dropdownToggle"}
+      >
+        <Image
+          src="/colorPicker.svg"
+          style={{ filter: `drop-shadow(0px 0px 2px ${selectedOption})` }}
+          width={18.7}
+          height={21}
+          alt="color picker"
+          className="colorPicker"
+        />
+        Background color
+        <Image
+          src={isOpen ? "/upArrow.svg" : "/downArrow.svg"}
+          width={13.98}
+          height={7.99}
+          alt="color picker"
+          className="colorPicker"
+        />
+      </button>
 
       {isOpen && (
         <ul className="dropdownMenu">
@@ -71,12 +62,10 @@ export default function BackgroundDropdown(props: {
               onClick={() => handleBackgroundSelect(color)}
               className="dropdownItem"
               style={{ backgroundColor: color }}
-            >
-            </li>
+            ></li>
           ))}
         </ul>
       )}
-    </div>
     </div>
   );
 }
