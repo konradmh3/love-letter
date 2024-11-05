@@ -15,8 +15,8 @@ const CopyClipboard = () => {
         className="copy-button bot-left"
         src={`/copyClipbboard.svg`}
         alt="copy to clipboard"
-        width={50}
-        height={50}
+        width={57}
+        height={57}
       />
   );
 };
