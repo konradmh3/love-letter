@@ -6,6 +6,7 @@ import { postMessage } from "../lib/actions";
 import CreationComponent from "../ui/creationcomponent";
 import { workSans } from "../ui/fonts";
 import BackgroundSelect from "../ui/backgroundselect";
+import BackgroundDropdown from "../ui/backgroundDropdown";
 
 export default function Create() {
   const [selectedSVG, setSelectedSVG] = useState("");
@@ -34,13 +35,15 @@ export default function Create() {
   return (
     <div className={workSans.className}>
       <div className="create-card-page">
+        {/* <BackgroundSelect setBgColor={setBgColor} bgColor={bgColor} /> */}
+        <BackgroundDropdown setBgColor={setBgColor} bgColor={bgColor} />
         <CreationComponent header={<h1>Choose envelope</h1>}>
           <UsableSVGs
             setSelectedSVG={setSelectedSVG}
             selectedSVG={selectedSVG}
           />
         </CreationComponent>        
-        <BackgroundSelect setBgColor={setBgColor} bgColor={bgColor} />
+        
         <CreationComponent header={<h1>Create message</h1>}>
           <textarea
             onChange={handleMessageChange}
