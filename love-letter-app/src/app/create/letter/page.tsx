@@ -2,6 +2,7 @@ import { getMessage } from "@/app/lib/data";
 import AnimatedCard from "@/app/ui/animatedCard";
 import Link from "next/link";
 import Clipboard from "@/app/ui/clipBoard";
+import { workSans } from "@/app/ui/fonts";
 
 export default async function Letter({
   searchParams,
@@ -21,6 +22,8 @@ export default async function Letter({
   const message = await getMessage(searchParams?.id);
   console.log("test : ", searchParams?.bgcolor);
   return (
+    <div className={workSans.className}>
+
     <div
       className="letter-container"
       style={
@@ -37,5 +40,6 @@ export default async function Letter({
       </Link>
       <Clipboard/>
     </div>
+  </div>
   );
 }
